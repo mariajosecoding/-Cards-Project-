@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+}
+/*-------Container Sections---------*/
+.container {
+  display: flex;
+  width: 85vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  overflow: hidden;
+  margin: 0;
+}
+.section {
+  width: 100vw;
+  text-align: center;
+  justify-content: center;
+  background-color: rgb(139, 99, 179);
+  color: #fff;
+  opacity: 0.7;
+  height: 100px;
+  padding-top: 5px;
+}
+
+/*-------Class---------*/
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+  border-radius: 50px;
+  color: #fff;
+  cursor: pointer;
+  flex: 0.5;
+  margin: 20px;
+  position: relative;
+  transition: all 700ms ease-in;
+}
+/*-------font settings---------*/
+.panel h3 {
+  font-size: 18px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+/* opacity to 0 since we only want to show it on active*/
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transform: opacity 0.3s ease-in 0.4s;
+}
+
+.linkedIn,
+.gitHub {
+  padding-right: 20px;
+  padding-bottom: 50px;
+  color: rgb(68, 16, 110);
+}
+
+/*-------@Media--------*/
+@media (max-width: 480px) {
+  .container {
+    width: 100vw;
+  }
+  /* Showing only a few when the webpage is small. Taking out of the picture the last 3 pictures*/
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5),
+  .panel:nth-of-type(7) {
+    display: none;
+  }
+  .panel {
+    margin: 2px;
+  }
+}
